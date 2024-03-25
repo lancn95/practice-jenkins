@@ -10,11 +10,11 @@ pipeline {
     }
     stages {
 
-        stage('Build with Maven') {
+        stage('Build with Gradle') {
             steps {
-                sh 'mvn --version'
+                sh './gradlew --version'
                 sh 'java -version'
-                sh 'mvn clean package -Dmaven.test.failure.ignore=true'
+                sh './gradlew clean build'
             }
         }
 
